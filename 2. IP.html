@@ -8,18 +8,19 @@
 </head>
 
 <body>
-    Enter Aadhar Number : <input type="text" id="1">
+    Enter IP Address <input type="text" id="1">
     <button onclick="time()">Click</button>
     <p id="23"></p>
     <script>
         function time() {
             var time = document.getElementById("1").value;
-            var sec = /^\d{4}\s\d{4}\s\d{4}$/;
+            var sec = /^(\0|[1-9]\d?|1\d{2}|2[0-4]\d{2}|25[0-5]).(0|[1-9]\d?|1\d{2}|2[0-4]\d{2}|25[0-5]).(0|[1-9]\d?|1\d{2}|2[0-4]\d{2}|25[0-5]).(0|[1-9]\d?|1\d{2}|2[0-4]\d{2}|25[0-5])$/
+
             if (sec.test(time)) {
-                document.getElementById("23").innerHTML = "Valid Aadhar Number"
+                document.getElementById("23").innerHTML = "Valid IP Address"
             }
             else {
-                document.getElementById("23").innerHTML = "Not Aadhar Number"
+                document.getElementById("23").innerHTML = "Not Valid IP Address"
             }
 
         }
