@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="1">
+    <button onclick="add()">Add</button>
+    <button onclick="display()">Display</button>
+    <hr>
+    <p id="65"></p>
+    <script>
+        var a = [];
+        function add() {
+            var b = document.getElementById("1").value;
+            a.push(b);
+        }
+        function display() {
+            for (var i = 0; i < a.length; i++) {
+                document.getElementById("65").innerHTML+="Element " + i +" = " + a[i] +"<br>"
+                
+            }
+        }
+    </script>
+</body>
+
+</html>
