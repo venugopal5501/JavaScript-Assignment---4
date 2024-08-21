@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Enter Number <input type="number" id="1">
+    <button onclick="add()">Click</button>
+    <p id="2"></p>
+    <script>
+        function add() {
+            var a = document.getElementById("1").value;
+            var b;
+            if (a >= 19) {
+                b = Math.abs(a - 19);
+                c = b * 3;
+                document.getElementById("2").innerHTML = c;
+            }
+            else {
+                b = Math.abs(a - 19);
+                document.getElementById("2").innerHTML = b;
+            }
+        }
+    </script>
+</body>
+
+</html>
