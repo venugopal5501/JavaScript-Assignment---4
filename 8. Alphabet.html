@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function range() {
+            var start = document.getElementById("first").value;
+            var end = document.getElementById("second").value;
+            var step = document.getElementById("step").value;
+            var range = [];
+            var isNumeric = !isNaN(start) && !isNaN(end);
+            if (isNumeric) {
+                start = parseFloat(start);
+                end = parseFloat(end);
+            } else {
+              
+                start = start.charCodeAt(0);
+                end = end.charCodeAt(0);
+            }
+            if (isNaN(step) || step === 0) {
+                document.getElementById("p").innerHTML = "Invalid step value.";
+                return;
+            }
+            if (end < start) {
+                step = -step;
+            }
+            while (step > 0 ? end >= start : end <= start) {
+                if (isNumeric) {
+                    range.push(start);
+                } else {
+                    range.push(String.fromCharCode(start));
+                }
+                start += step;
+            }
+            document.getElementById("p").innerHTML = range.join(', ');
+        }
+    </script>
+</head>
+<body>
+    <label>Enter the start:</label>
+    <input type="text" id="first"><br>
+    <label>Enter the end:</label>
+    <input type="text" id="second"><br>
+    <label>Enter the step:</label>
+    <input type="text" id="step"><br>
+    <button onclick="range()">Submit</button>
+    <p id="p"></p>
+</body>
+</html>
