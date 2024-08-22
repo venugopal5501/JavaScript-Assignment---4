@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Date</title>
+<script>
+function findDatesInString() {
+  var inputText = document.getElementById('inputString').value;
+  var date = /\b\d{1,2}\/\d{1,2}\/\d{4}\b/gm
+  var matches = inputText.match(date);
+ let output = "No dates found.";
+  if (matches) {
+    output = "Dates found: " + matches.join(', ');
+  }
+ 
+  document.getElementById('result').innerText = output;
+}
+</script>
+</head>
+<body>
+<input type="text" id="inputString">
+<button onclick="findDatesInString()">Find Dates</button>
+<p id="result"></p>
+</body>
+</html>
+ 
